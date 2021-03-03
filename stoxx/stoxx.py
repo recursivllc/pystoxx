@@ -1,50 +1,69 @@
 import pandas as pd 
 import numpy as np 
 import requests
-
-# class Stoxx:
-#     def __init__(self, ticker, free_cred_access_key = "some_access_key_123", free_cred_access_secret = "some_access_secret_123"):
-#         self.ticker = ticker
-#         self.rapid_url = "www.someurl.com"
-#         self.free_cred_access_key = "some_access_key_123"
-#         self.free_cred_access_secret = "some_access_secret_123"
-        
-#     def get_company_data(self):
-#         company_data = "https://cloud.iexapis.com/stable/stock/{ticker}/company?token=pk_8c5bd128eeab4bec97784baa1d133b30".format(ticker=self.ticker)
-#         response = requests.get(company_data)
-#         return response.json()
-
-#     def get_company_ticker(self):
-#         return self.ticker
-    
-#     def set_stoxx_keys(self, free_cred_access_key, free_cred_access_secret):
-#         self.free_cred_access_key = free_cred_access_key
-#         self.free_cred_access_secret = free_cred_access_secret
-
-#     def get_stoxx_keys(self):
-#         return self.free_cred_access_key, self.free_cred_access_secret
+import json
 
 class Stoxx:
     def __init__(self):
-        self.key = "some_access_key_123"
-        self.secret = "some_access_secret_123"
-        self.ticker = ""
+        self.x_rapidapi_key = ""
+        self.x_rapidapi_host = "stoxx-by-recursiv.p.rapidapi.com"
 
     def get_key(self):
-        return self.key
+        return self.x_rapidapi_key
 
     def get_secret(self):
         return self.secret
 
-    def RapidAPI(self, key, secret):
-        self.key = key
-        self.secret = secret
+    def RapidAPI(self, x_rapidapi_key):
+        self.x_rapidapi_key = x_rapidapi_key
+        self.x_rapidapi_host = "stoxx-by-recursiv.p.rapidapi.com"
 
-    def Ticker(self, ticker):
-        self.ticker = ticker
-        return self
+    def get_company_data(self, ticker):
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/info".format(ticker=ticker)
+        headers = {
+            'x-rapidapi-key': self.x_rapidapi_key,
+            'x-rapidapi-host': self.x_rapidapi_host
+            }
+        response = requests.request("GET", url, headers=headers)
+        return response.json()
 
-    def get_company_data(self):
-        company_data = "https://cloud.iexapis.com/stable/stock/{ticker}/company?token=pk_8c5bd128eeab4bec97784baa1d133b30".format(ticker=self.ticker)
-        response = requests.get(company_data)
+    def get_company_competition(self, ticker):
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/competition".format(ticker=ticker)
+        headers = {
+            'x-rapidapi-key': self.x_rapidapi_key,
+            'x-rapidapi-host': self.x_rapidapi_host
+            }
+        response = requests.request("GET", url, headers=headers)
+        return response.json()
+
+    def get_historical_news(self, ticker, months):
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/{months}".format(ticker=ticker,months=months)
+        headers = {
+            'x-rapidapi-key': self.x_rapidapi_key,
+            'x-rapidapi-host': self.x_rapidapi_host
+            }
+        response = requests.request("GET", url, headers=headers)
+        return response.json()
+
+    def get_public_companies(self):
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/companies"
+        headers = {
+            'x-rapidapi-key': self.x_rapidapi_key,
+            'x-rapidapi-host': self.x_rapidapi_host
+            }
+        response = requests.request("GET", url, headers=headers)
+        return response.json()
+
+    def calculate_sentiment(self, text):
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/calculate/sentiment"
+
+        payload = json.dumps({"content" : "This is a wonderful and amazing API!"})
+
+        headers = {
+            'content-type': "application/json",
+            'x-rapidapi-key': self.x_rapidapi_key,
+            'x-rapidapi-host': self.x_rapidapi_host
+            }
+
+        response = requests.request("POST", url, data=payload, headers=headers)
         return response.json()

@@ -10,27 +10,27 @@
 # print(apple.get_stoxx_keys())
 
 from stoxx import Stoxx
-aws_key = "1231343423"
-aws_secret = "1231231242"
+x_rapidapi_key = "5a62c537eemsh34406ef7e191f2fp150c91jsn02fafc190614"
 
-Stoxx = Stoxx()
+stoxx = Stoxx()
+print(stoxx.get_company_data(ticker="aapl"))
+# print(Stoxx.get_key())
+# print(Stoxx.get_secret())
+
+stoxx.RapidAPI(x_rapidapi_key)
 
 # print(Stoxx.get_key())
 # print(Stoxx.get_secret())
 
-Stoxx.RapidAPI(aws_key, aws_secret) #Working
+# apple = Stoxx.Ticker("aapl")
+# print("Apple: ", apple.ticker)
+# print(apple.get_company_data(ticker="aapl"))
+print(stoxx.get_company_data(ticker="aapl"))
 
-# print(Stoxx.get_key())
-# print(Stoxx.get_secret())
+print(stoxx.get_company_competition(ticker="aapl"))
 
-apple = Stoxx.Ticker("aapl")
-print("Apple: ", apple.ticker)
-print(apple.get_company_data())
+print(stoxx.get_historical_news(ticker="aapl", months=1))
 
-amgen = Stoxx.Ticker("amgn")
-print("Amgen: ", amgen.ticker)
-print(amgen.get_company_data())
+print(len(stoxx.get_public_companies()))
 
-wayfair = Stoxx.Ticker("w")
-print("Amgen: ", amgen.ticker)
-print(wayfair.get_company_data())
+print(stoxx.calculate_sentiment("good news today!"))
