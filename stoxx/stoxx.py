@@ -54,16 +54,31 @@ class Stoxx:
         response = requests.request("GET", url, headers=headers)
         return response.json()
 
+    def get_historical_prices(self, ticker, range):
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/{range}".format(ticker=ticker,range=range)
+        headers = {
+            'x-rapidapi-key': self.x_rapidapi_key,
+            'x-rapidapi-host': self.x_rapidapi_host
+            }
+        response = requests.request("GET", url, headers=headers)
+        return response.json()
+
+    def get_company_quote(self, ticker):
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/quote".format(ticker=ticker)
+        headers = {
+            'x-rapidapi-key': self.x_rapidapi_key,
+            'x-rapidapi-host': self.x_rapidapi_host
+            }
+        response = requests.request("GET", url, headers=headers)
+        return response.json()
+
     def calculate_sentiment(self, text):
         url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/calculate/sentiment"
-
         payload = json.dumps({"content" : "This is a wonderful and amazing API!"})
-
         headers = {
             'content-type': "application/json",
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
             }
-
         response = requests.request("POST", url, data=payload, headers=headers)
         return response.json()
