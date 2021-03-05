@@ -55,7 +55,7 @@ class Stoxx:
         return response.json()
 
     def get_historical_prices(self, ticker, range):
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/{range}".format(ticker=ticker,range=range)
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/prices/{range}".format(ticker=ticker,range=range)
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
