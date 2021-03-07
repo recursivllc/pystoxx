@@ -4,13 +4,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-        name="stoxx-by-recursiv",
+        name="pystoxx",
         version="0.0.1",
         author="Saleh Alkhalifa",
         author_email="alkhalifas@recursiv.tech",
         description=long_description,
         long_description_content_type="text/markdown",
-        url="https://github.com/pypa/stoxx-by-recursiv",
+        url="https://github.com/recursivllc/pystoxx",
         classifiers=[
             "Programming Language :: Python :: 3",
             "License :: OSI Approved :: MIT License",

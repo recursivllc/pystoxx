@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 setup.py
 stoxx/__init__.py
+stoxx/stoxx.py
 stoxx_by_recursiv.egg-info/PKG-INFO
 stoxx_by_recursiv.egg-info/SOURCES.txt
 stoxx_by_recursiv.egg-info/dependency_links.txt
