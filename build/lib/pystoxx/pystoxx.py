@@ -19,6 +19,8 @@ class Stoxx:
         x_rapidapi_key -- A character string obtainable from RapidAPI.
 
         Examples:
+
+        from pystoxx import Stoxx
     
         stoxx = Stoxx()
         stoxx.RapidAPI("enter-long-api-character-string-here")
