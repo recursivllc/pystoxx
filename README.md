@@ -1,8 +1,8 @@
 # PyStoxx:
 
-### PyStoxx is a Python library of [Stoxx by Recursiv](https://recursiv.tech/) that allows users to retrieve current data and historical information for publicly traded companies with our JSON API.
+PyStoxx is a Python library of [Stoxx by Recursiv](https://recursiv.tech/) that allows users to retrieve current data and historical information for publicly traded companies with our JSON API.
 
-### Features Include:
+#### Features Include:
 - Current & Historical Sentiment
 - News Articles
 - Pricing History
@@ -10,7 +10,7 @@
 - Company Data
 - Company Competition
 
-### Quick Start Guide
+#### Quick Start Guide
 
 1. Install Stoxx using Pip
 

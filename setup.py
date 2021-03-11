@@ -8,9 +8,10 @@ setuptools.setup(
         version="0.0.6",
         author="Saleh Alkhalifa",
         author_email="alkhalifas@recursiv.tech",
-        description=long_description,
-        long_description_content_type="text/markdown",
+        description="Search and retrieve current data and historical information for publicly traded companies",
         url="https://github.com/recursivllc/pystoxx",
+        keywords=['stock', 'prices', 'sentiment', 'historical', 'news', 'dataset', 'api'],
+        install_requires=['requests'],
         classifiers=[
             "Programming Language :: Python :: 3",
             "License :: OSI Approved :: MIT License",
@@ -18,4 +19,5 @@ setuptools.setup(
             ],
         packages=setuptools.find_packages(),
         python_requires='>3.6',
-        )
+        long_description=long_description,
+        long_description_content_type='text/markdown')
