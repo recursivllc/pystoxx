@@ -31,13 +31,13 @@ PyStoxx is a Python library of [Stoxx by Recursiv](https://recursiv.tech/) that 
         # Get historical pricing data
         stoxx.get_historical_prices(ticker="msft", months="1m")
 
-        # Get historical pricing data
+        # Get historical news & sentiment data
         stoxx.get_historical_news(ticker="msft", months=2)
 
-        # Get historical pricing data
+        # Get company information
         stoxx.get_company_data("msft")
 
-        # Get price quote
+        # Get a price quote
         stoxx.get_price_quote("msft")
 
 
