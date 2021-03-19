@@ -29,20 +29,20 @@ class Stoxx:
         self.x_rapidapi_key = x_rapidapi_key
         self.x_rapidapi_host = "stoxx-by-recursiv.p.rapidapi.com"
 
-    def get_historical_prices(self, ticker="msft", range="1m"):
+    def get_historical_prices(self, ticker="msft", months=1):
         """ Returns historical prices for a given ticker.
 
         Keyword Arguments:
         ticker -- Company ticker symbol like 'amzn' or 'aapl' (default amzn)
-        range -- Range of time in months '1m', or years '1y' (default 1m)
+        months -- Range of time in months 1, 2, 12, etc... (default 1)
 
         Examples:
     
-        prices = stoxx.get_historical_prices("amzn", "3m") # Returns 3 months of data
-        prices = stoxx.get_historical_prices("msft", "1y") # Returns 1 year of data
+        prices = stoxx.get_historical_prices("amzn", 3) # Returns 3 months of data
+        prices = stoxx.get_historical_prices("msft", 12) # Returns 1 year of data
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/prices/{range}".format(ticker=ticker,range=range)
+        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/prices/{months}".format(ticker=ticker,months=months)
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -55,7 +55,7 @@ class Stoxx:
 
         Keyword Arguments:
         ticker -- Company ticker symbol like 'amzn' or 'aapl' (default amzn)
-        months -- Range of time in months '1', or years '3' (default 1)
+        months -- Range of time in months 1, 2, 3, etc... (default 1)
 
         Examples:
         prices = stoxx.get_historical_prices("amzn", 1) # Returns 1 month of data
