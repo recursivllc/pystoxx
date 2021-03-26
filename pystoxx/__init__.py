@@ -50,7 +50,7 @@ class Stoxx:
         response = requests.request("GET", url, headers=headers)
         return response.json()
 
-    def get_historical_news(self, ticker, months):
+    def get_historical_news(self, ticker="msft", months=1):
         """ Returns historical news and sentiment for a given ticker.
 
         Keyword Arguments:

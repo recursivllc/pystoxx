@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pystoxx
-Version: 0.0.7
+Version: 0.0.8
 Summary: Search and retrieve current data and historical information for publicly traded companies
 Home-page: https://github.com/recursivllc/pystoxx
 Author: Saleh Alkhalifa

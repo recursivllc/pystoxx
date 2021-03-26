@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
         name="pystoxx",
-        version="0.0.7",
+        version="0.0.8",
         author="Saleh Alkhalifa",
         author_email="alkhalifas@recursiv.tech",
         description="Search and retrieve current data and historical information for publicly traded companies",
