@@ -201,11 +201,6 @@ Output:
         }
 
 
+Disclosures & Disclaimers:
 
-
-
-
-
-
-
-
+Investing involves substantial risk. Recursiv LLC, the author, nor any of their respective affiliates make any guarantee or other promises as to any result that may be obtained from using the information provided through the Stoxx service or the pyStoxx library. While past performance may be analyzed using the Stoxx service, past performance should not be considered indicative of future performance. Investment decisions should not be made without first consulting a personal financial advisor and careful study of the issuer's prospectus and other public filings. To the maximum extent permitted by law Recursiv LLC, the author, and their respective affiliates, disclaim any and all liability in the event any information, commentary, analysis, opinions, advice and/or recommendations provided by the service prove to be inaccurate, incomplete or unreliable, or result in any investment or other losses. Any and all data provided by the service should be considered commentary and opinion and are subject to change at any time. The information provided in the service is obtained from sources which Recursiv LLC believes to be reliable. However, Recursiv LLC nor the author have not independently verified or otherwise investigated all such information. Neither Recursiv LLC, the author, nor any of their respective affiliates guarantees the accuracy or completeness of any such information. Recursiv LLC, the author, nor any of their respective affiliates are responsible for any errors or omissions in any of the information provided.
