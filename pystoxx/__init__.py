@@ -6,14 +6,14 @@ import json
 class Stoxx:
     def __init__(self):
         self.x_rapidapi_key = ""
-        self.x_rapidapi_host = "stoxx-by-recursiv.p.rapidapi.com"
+        self.x_rapidapi_host = "stoxx1.p.rapidapi.com"
 
     def get_key(self):
         return self.x_rapidapi_key
 
     def RapidAPI(self, x_rapidapi_key):
         """ Authenticates a user using their RapidAPI key. 
-        Sign up for a free account by navigating to https://rapidapi.com/recursivllc/api/stoxx-by-recursiv.
+        Sign up for a free account by navigating to https://rapidapi.com/recursivllc/api/stoxx1.
 
         Keyword Arguments:
         x_rapidapi_key -- A character string obtainable from RapidAPI.
@@ -27,7 +27,7 @@ class Stoxx:
 
         """
         self.x_rapidapi_key = x_rapidapi_key
-        self.x_rapidapi_host = "stoxx-by-recursiv.p.rapidapi.com"
+        self.x_rapidapi_host = "stoxx1.p.rapidapi.com"
 
     def get_historical_prices(self, ticker="msft", months=1):
         """ Returns historical prices for a given ticker.
@@ -42,7 +42,7 @@ class Stoxx:
         prices = stoxx.get_historical_prices("msft", 12) # Returns 1 year of data
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/prices/{months}".format(ticker=ticker,months=months)
+        url = "https://stoxx1.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/prices/{months}".format(ticker=ticker,months=months)
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -62,7 +62,7 @@ class Stoxx:
         prices = stoxx.get_historical_prices("msft", 3) # Returns 3 months of data
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/history/articles/{months}".format(ticker=ticker,months=months)
+        url = "https://stoxx1.p.rapidapi.comapi/v1/stoxx/company/{ticker}/history/articles/{months}".format(ticker=ticker,months=months)
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -80,7 +80,7 @@ class Stoxx:
         companies = stoxx.get_public_companies() # Returns list of all public companies.
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/companies"
+        url = "https://stoxx1.p.rapidapi.com/api/v1/stoxx/companies"
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -99,7 +99,7 @@ class Stoxx:
         msft_data = stoxx.get_company_data(ticker='msft') # Returns data relating to ticker 'msft'.
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/info".format(ticker=ticker)
+        url = "https://stoxx1.p.rapidapi.com/api/v1/stoxx/company/{ticker}/info".format(ticker=ticker)
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -118,7 +118,7 @@ class Stoxx:
         price_quote = stoxx.get_price_quote("amzn") # Returns a price quote for 'amzn'
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/quote".format(ticker=ticker)
+        url = "https://stoxx1.p.rapidapi.com/api/v1/stoxx/company/{ticker}/quote".format(ticker=ticker)
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -137,7 +137,7 @@ class Stoxx:
         competition = stoxx.get_company_competition("msft") # Returns a list of known competitors for 'msft'
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/company/{ticker}/competition".format(ticker=ticker)
+        url = "https://stoxx1.p.rapidapi.com/api/v1/stoxx/company/{ticker}/competition".format(ticker=ticker)
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -156,7 +156,7 @@ class Stoxx:
         market = stoxx.get_market_performance() # Returns a list sectors and their current performances.
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/market/performance"
+        url = "https://stoxx1.p.rapidapi.com/api/v1/stoxx/market/performance"
         headers = {
             'x-rapidapi-key': self.x_rapidapi_key,
             'x-rapidapi-host': self.x_rapidapi_host
@@ -175,7 +175,7 @@ class Stoxx:
         amzn_sentiment = stoxx.calculate_sentiment({"content" : text_data}) # Returns a list sectors and their current performances.
 
         """
-        url = "https://stoxx-by-recursiv.p.rapidapi.com/api/v1/stoxx/calculate/sentiment"
+        url = "https://stoxx1.p.rapidapi.com/api/v1/stoxx/calculate/sentiment"
         payload = json.dumps({"content" : "This is a wonderful and amazing API!"})
         headers = {
             'content-type': "application/json",
